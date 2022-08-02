@@ -28,7 +28,6 @@ export const LoginPage = () => {
           <strong>Entrar</strong>
           <input 
             name={"email"}
-            placeholder="E-mail"
             type={"email"}
             onChange={onChange}
             value={form.email}
@@ -36,7 +35,6 @@ export const LoginPage = () => {
           />
           <input 
             name={"password"}
-            placeholder="Senha"
             type={"password"}
             onChange={onChange}
             value={form.password}

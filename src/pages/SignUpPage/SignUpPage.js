@@ -5,16 +5,19 @@ import { ImgLogoRappi, ScreenContainer, ContainerSignup, ButtonCreate  } from ".
 import { useNavigate } from "react-router-dom";
 import { goToLogin } from "../../router/Coordinator";
 
+
+
+
 export const SignUpPage = () => {
 
     const navigate = useNavigate()
-    /* const [form, onChange, clear] = useForm ({name: "", email: "", cpf: "", password: "", passwordok: "" })
- */
-/*     const onSubmitForm = (event) => {
+    const [form, onChange, clear] = useForm ({name: "", email: "", cpf: "", password: "", passwordok: "" })
+ 
+    const onSubmitForm = (event) => {
         event.preventDefault();
         console.log(form)
-        signUp(form, clear, navigate)
-    } */
+        /* signUp(form, clear, navigate) */
+    } 
 
     return (
         <ScreenContainer>
@@ -23,29 +26,36 @@ export const SignUpPage = () => {
                 alt="logo Rappi"
                 onClick={()=>{goToLogin(navigate)}}
             />
-            <form>      
+            <form onSubmit={onSubmitForm}>      
                 <ContainerSignup>
                     <strong>Cadastrar</strong>
+                    <input 
+                        placeholder="Nome Sobrenome"
+                        onChange={onChange}
+                    
+                    />
+                    <input 
+                        placeholder="E-mail"
+                        onChange={onChange}
+                    />
 
                     <input 
-                        placeholder="Nome Sobrenome">
-                    </input>
+                        placeholder="CPF"
+                        onChange={onChange}
+                        
+                    />
 
                     <input 
-                        placeholder="E-mail">
-                    </input>
+                        placeholder="Senha"
+                        onChange={onChange}
+                        
+                    />
 
                     <input 
-                        placeholder="CPF">
-                    </input>
+                        placeholder="Confirmar Senha"
+                        onChange={onChange}
 
-                    <input 
-                        placeholder="Senha">
-                    </input>
-
-                    <input 
-                        placeholder="Confirmar Senha">
-                    </input>
+                    />
                     <ButtonCreate>
                         Criar
                     </ButtonCreate>
