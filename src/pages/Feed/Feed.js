@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { CardRestaurant } from "../../components/CardRestaurant/CardRestaurant";
 
 export const Feed = () => {
 
@@ -45,6 +46,7 @@ export const Feed = () => {
             <input value={searchRestaurant} onChange={(event) => handleInputRestaurant(event)} placeholder="Buscar Restaurantes"/>
             Feed
             {mapearRestaurantes}
+
         </div>
     )
 }
