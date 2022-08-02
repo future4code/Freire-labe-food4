@@ -6,10 +6,41 @@ export const ContainerLogin = styled.div`
     flex-direction: column;
     text-align: center;
     align-items: center;
-    height: 100vh;
     gap: 5px;
 `
 export const ImgLogoRappi = styled.img`
-    display: flex;
     margin-bottom: 10px;
+    width: 110px;
+    height: 58px;
 `
+export const ScreenContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    justify-content: center;
+    margin-top: 10vw;
+`
+export const ButtonSubmit = styled.button`
+  width: 190px;
+  height: 30px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+  margin: 5px;
+  display: inline-block;
+  background-color: #e86e5a;
+  border-radius: 5px;
+  border: none;
+  `
+
+  export const ButtonSignup = styled.button`
+   border: none;
+   text-decoration: none;
+   background-color: white;
+   font-size: 13px;
+   align-items: center;
+   padding-top: 10px
+  `

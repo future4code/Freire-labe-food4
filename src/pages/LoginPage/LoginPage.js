@@ -1,39 +1,57 @@
 import React from "react";
 import LogoRappi from "../../imgs/logo-future-eats-invert_2022-08-01/logo-future-eats-invert.png";
-import { ContainerLogin, ImgLogoRappi  } from "./style";
+import { ContainerLogin, ImgLogoRappi, ScreenContainer, ButtonSubmit, ButtonSignup  } from "./style";
+import useForm from "../../hooks/useForm";
+import { useNavigate } from "react-router-dom";
+import {goToSignup} from "../../router/Coordinator"
 
 export const LoginPage = () => {
+
+  const [form, onChange, clear] = useForm({email:"", password: ""})
+
   const handleSubmit = (event) => {
-    // Prevent page reload
     event.preventDefault();
+    console.log(form)
   };
 
+  const navigate = useNavigate()
+
+
   return (
-    <div>
+    <ScreenContainer>
+      <ImgLogoRappi
+        src={LogoRappi}
+        alt="logo Rappi"
+      />
       <form onSubmit={handleSubmit}>
         <ContainerLogin>
-        <ImgLogoRappi
-            width="104px"
-            height="58px"
-            src={LogoRappi}
-            alt="logo Rappi"
-        />
           <strong>Entrar</strong>
           <input 
+            name={"email"}
             placeholder="E-mail"
-            type="text"
+            type={"email"}
+            onChange={onChange}
+            value={form.email}
             required
           />
           <input 
+            name={"password"}
             placeholder="Senha"
+            type={"password"}
+            onChange={onChange}
+            value={form.password}
             required 
           />
-          <button>Entrar</button>
+          <ButtonSubmit type={"submit"}>
+            Entrar
+          </ButtonSubmit>
           <div>
-            <button>Não possui cadastro? clique aqui!</button>
+            <ButtonSignup onClick={()=>{goToSignup(navigate)}}>
+                Não possui cadastro? <b>clique aqui!</b>
+            </ButtonSignup>
           </div>
         </ContainerLogin>
       </form>
-    </div>
+    </ScreenContainer>
   );
 };

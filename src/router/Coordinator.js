@@ -1,13 +1,13 @@
+export const goToSignup = (navigate) => {
+    navigate ("/signup")
+}
+
 export const goToLogin = (navigate) => {
     navigate('/');
 };
 
 export const goToDefault = (navigate) => {
     navigate('/default');
-};
-
-export const goToSignUpPage = (navigate) => {
-    navigate('/signup');
 };
 
 export const goToSignUpAddress = (navigate) => {
@@ -37,3 +37,4 @@ export const goToEditProfile = (navigate) => {
 export const goToEditAddress = (navigate) => {
     navigate('/profile/editaddress');
 };
+
