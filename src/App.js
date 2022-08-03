@@ -1,13 +1,17 @@
 import { GlobalStyled } from "./styled";
 import { Router } from "./router/Routes";
+import { useState } from "react";
+import { Context } from "./Context";
 
-function App() {
+const App = () => {
+  const [currentScreen, setCurrentScreen] = useState();
+
   return (
-    <Router>
+    <Context.Provider value={{ currentScreen, setCurrentScreen }}>
       <GlobalStyled />
-      App Aqui
-    </Router>
+      <Router />
+    </Context.Provider>
   );
-}
+};
 
 export default App;
