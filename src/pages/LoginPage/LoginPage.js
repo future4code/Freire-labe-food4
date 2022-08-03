@@ -4,17 +4,23 @@ import { ContainerLogin, ImgLogoRappi, ScreenContainer, ButtonSubmit, ButtonSign
 import useForm from "../../hooks/useForm";
 import { useNavigate } from "react-router-dom";
 import {goToSignup} from "../../router/Coordinator"
+import { login } from "../../services/user";
+
 
 export const LoginPage = () => {
 
   const [form, onChange, clear] = useForm({email:"", password: ""})
+  
+  const navigate = useNavigate()
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(form)
+    login(form, clear, navigate)
   };
 
-  const navigate = useNavigate()
+  
+
 
 
   return (

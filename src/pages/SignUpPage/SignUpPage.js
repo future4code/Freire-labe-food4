@@ -4,6 +4,7 @@ import LogoRappi from "../../imgs/logo-future-eats-invert_2022-08-01/logo-future
 import { ImgLogoRappi, ScreenContainer, ContainerSignup, ButtonCreate  } from "./style";
 import { useNavigate } from "react-router-dom";
 import { goToLogin } from "../../router/Coordinator";
+import { signUp } from "../../services/user";
 
 
 
@@ -16,6 +17,7 @@ export const SignUpPage = () => {
     const onSubmitForm = (event) => {
         event.preventDefault();
         console.log(form)
+        signUp(form, clear, navigate)
         /* signUp(form, clear, navigate) */
     } 
 
@@ -32,11 +34,14 @@ export const SignUpPage = () => {
                     <input 
                         placeholder="Nome Sobrenome"
                         onChange={onChange}
-                    
+                        
+                        type={"name"}
                     />
                     <input 
                         placeholder="E-mail"
                         onChange={onChange}
+                        
+                        type={"email"}
                     />
 
                     <input 
@@ -48,13 +53,13 @@ export const SignUpPage = () => {
                     <input 
                         placeholder="Senha"
                         onChange={onChange}
-                        
+                       
                     />
 
                     <input 
                         placeholder="Confirmar Senha"
                         onChange={onChange}
-
+                        
                     />
                     <ButtonCreate>
                         Criar

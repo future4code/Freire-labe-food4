@@ -1,9 +1,12 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { CardRestaurant } from "../../components/CardRestaurant/CardRestaurant";
+/* import { CardRestaurant } from "../../components/CardRestaurant/CardRestaurant"; */
+/* import useProtectedPage from "../../hooks/useProtectedPage"; */
 
 export const Feed = () => {
+
+    /* useProtectedPage() */
 
     const [guardarRestaurantes, setGuardarRestaurantes] = useState([])
 
