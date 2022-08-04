@@ -11,7 +11,7 @@ export const CardRestaurant = ({restaurant}) => {
                 />
             </ImgContainer>
             <NameRestaurant>
-                <p>{restaurant.name}</p>
+                <p>{restaurant?.name}</p>
             </NameRestaurant>
             <InfoDelivery>
                 <p>
