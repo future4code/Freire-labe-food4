@@ -1,7 +1,13 @@
 import React from "react";
+import { useContext, useEffect } from "react";
+import { Context } from "../../Context";
 
 export const SignUpAddress = () => {
-    return (
-        <div>cadastro endereco</div>
-    )
-}
+  const context = useContext(Context);
+
+  useEffect(() => {
+    context.setCurrentScreen("signup-adress");
+  }, []);
+
+  return <div>cadastro endereco</div>;
+};

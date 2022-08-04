@@ -1,7 +1,13 @@
 import React from "react";
+import { useContext, useEffect } from "react";
+import { Context } from "../../Context";
 
 export const EditProfile = () => {
-    return (
-        <div>EditProfile</div>
-    )
-}
+  const context = useContext(Context);
+
+  useEffect(() => {
+    context.setCurrentScreen("edit-profile");
+  }, []);
+
+  return <div>EditProfile</div>;
+};

@@ -10,22 +10,24 @@ import { CartPage } from "../pages/CartPage/CartPage";
 import { ProfilePage } from "../pages/Profile/Profile";
 import { EditProfile } from "../pages/EditProfile/EditProfile";
 import { EditAddress } from "../pages/EditAddress/EditAddress";
+import { NavBar } from "../components/NavBar/NavBar";
 
 export const Router = () => {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route index element={<LoginPage />} />
-                <Route path="/default" element={<DefaultPage />} />
-                <Route path="/signup" element={<SignUpPage />} />
-                <Route path="/signup/address" element={<SignUpAddress />} />
-                <Route path="/restaurant" element={<RestaurantPage />} />
-                <Route path="/feed" element={<Feed />} />
-                <Route path="/cart" element={<CartPage />} />
-                <Route path="/profile" element={<ProfilePage />} />
-                <Route path="/profile/editprofile" element={<EditProfile />} />
-                <Route path="/profile/editaddress" element={<EditAddress />} />
-            </Routes>
-        </BrowserRouter>
-    )
-}
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<LoginPage />} />
+        <Route path="/default" element={<DefaultPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/signup/address" element={<SignUpAddress />} />
+        <Route path="/restaurant" element={<RestaurantPage />} />
+        <Route path="/feed" element={<Feed />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/profile/editprofile" element={<EditProfile />} />
+        <Route path="/profile/editaddress" element={<EditAddress />} />
+      </Routes>
+      <NavBar />
+    </BrowserRouter>
+  );
+};

@@ -1,7 +1,13 @@
 import React from "react";
+import { useContext, useEffect } from "react";
+import { Context } from "../../Context";
 
 export const RestaurantPage = () => {
-    return (
-        <div>RestaurantPage</div>
-    )
-}
+  const context = useContext(Context);
+
+  useEffect(() => {
+    context.setCurrentScreen("restaurant");
+  }, []);
+
+  return <div>RestaurantPage</div>;
+};
