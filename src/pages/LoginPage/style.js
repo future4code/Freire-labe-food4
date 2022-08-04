@@ -7,6 +7,24 @@ export const ContainerLogin = styled.div`
     text-align: center;
     align-items: center;
     gap: 5px;
+
+    input{
+        position: relative;
+        border: 1px solid #b8b8b8;
+        height: 40px;
+        outline: 0;
+        &:nth-of-type(1){
+            &::after{
+                content: "E-mail para cadastrar aaaaaaa";
+                /* font-size: 16px; */
+                width: 10px;
+                height: 18px;
+                color: black;
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
 `
 export const ImgLogoRappi = styled.img`
     margin-bottom: 10px;
@@ -42,5 +60,7 @@ export const ButtonSubmit = styled.button`
    background-color: white;
    font-size: 13px;
    align-items: center;
-   padding-top: 10px
+   padding-top: 10px;
+   cursor: pointer;
   `
+  

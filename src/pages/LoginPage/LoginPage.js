@@ -12,6 +12,7 @@ import {
 import useForm from "../../hooks/useForm";
 import { useNavigate } from "react-router-dom";
 import { goToSignup } from "../../router/Coordinator";
+import { login } from "../../services/user";
 
 export const LoginPage = () => {
   const context = useContext(Context);
@@ -22,12 +23,13 @@ export const LoginPage = () => {
 
   const [form, onChange, clear] = useForm({ email: "", password: "" });
 
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(form);
+    login(form, clear, navigate);
   };
-
-  const navigate = useNavigate();
 
   return (
     <ScreenContainer>
@@ -37,7 +39,6 @@ export const LoginPage = () => {
           <strong>Entrar</strong>
           <input
             name={"email"}
-            placeholder="E-mail"
             type={"email"}
             onChange={onChange}
             value={form.email}
@@ -45,7 +46,6 @@ export const LoginPage = () => {
           />
           <input
             name={"password"}
-            placeholder="Senha"
             type={"password"}
             onChange={onChange}
             value={form.password}

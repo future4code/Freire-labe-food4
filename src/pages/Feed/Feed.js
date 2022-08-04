@@ -6,6 +6,8 @@ import { CardRestaurant } from "../../components/CardRestaurant/CardRestaurant";
 export const Feed = () => {
   const context = useContext(Context);
 
+  /* useProtectedPage() */
+
   const [guardarRestaurantes, setGuardarRestaurantes] = useState([]);
 
   const [searchRestaurant, setSearchRestaurant] = useState("");
