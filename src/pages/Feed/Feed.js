@@ -2,8 +2,10 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../../Context";
 import { CardRestaurant } from "../../components/CardRestaurant/CardRestaurant";
+import { ScreenContainer } from "./style";
 
 export const Feed = () => {
+  
   const context = useContext(Context);
 
   /* useProtectedPage() */
@@ -50,14 +52,15 @@ export const Feed = () => {
   });
 
   return (
-    <div>
+    <ScreenContainer>
       <input
         value={searchRestaurant}
         onChange={(event) => handleInputRestaurant(event)}
         placeholder="Buscar Restaurantes"
       />
-      Feed
+      <strong>aqui categorias</strong>
+      <p>cards restaurantes</p>
       {mapearRestaurantes}
-    </div>
+    </ScreenContainer>
   );
 };

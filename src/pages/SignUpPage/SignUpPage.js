@@ -48,17 +48,42 @@ export const SignUpPage = () => {
         <ContainerSignup>
           <strong>Cadastrar</strong>
           <input
+            name={"name"}
             placeholder="Nome Sobrenome"
             onChange={onChange}
             type={"name"}
+            value={form.name}
           />
-          <input placeholder="E-mail" onChange={onChange} type={"email"} />
-
-          <input placeholder="CPF" onChange={onChange} />
-
-          <input placeholder="Senha" onChange={onChange} />
-
-          <input placeholder="Confirmar Senha" onChange={onChange} />
+          <input 
+            name={"email"}
+            placeholder="E-mail" 
+            onChange={onChange} 
+            type={"email"} 
+            value={form.email}
+          />
+          <input
+            name={"cpf"} 
+            placeholder="CPF" 
+            onChange={onChange} 
+            value={form.cpf}
+            type={"number"}
+           />
+          <input 
+            name={"password"}
+            placeholder="Senha" 
+            onChange={onChange} 
+            value={form.password}
+            type={"password"}
+            required
+            />
+          <input 
+            name={"passwordok"}
+            placeholder="Confirmar Senha" 
+            onChange={onChange} 
+            value={form.passwordok}
+            type={"password"}
+            required
+          />
           <ButtonCreate>Criar</ButtonCreate>
         </ContainerSignup>
       </form>
