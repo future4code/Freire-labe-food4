@@ -39,7 +39,7 @@ export const HomeIcon = styled.div`
 
   :hover {
     cursor: pointer;
-    background-color: #eeeeee;
+    background-color: #eee;
     border-radius: 5px;
   }
 `;
