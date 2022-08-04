@@ -11,8 +11,9 @@ import {
 } from "./style";
 import useForm from "../../hooks/useForm";
 import { useNavigate } from "react-router-dom";
-import { goToSignup } from "../../router/Coordinator";
+import { goToFeed, goToSignup } from "../../router/Coordinator";
 import { login } from "../../services/user";
+
 
 export const LoginPage = () => {
   const context = useContext(Context);
