@@ -1,7 +1,7 @@
 import React from "react";
 import { CardContainer, InfoDelivery, NameRestaurant, ImgContainer } from "./style";
 
-export const CardRestaurant = () => {
+export const CardRestaurant = ({restaurant}) => {
     return (
         <CardContainer>
             <ImgContainer>
@@ -11,7 +11,7 @@ export const CardRestaurant = () => {
                 />
             </ImgContainer>
             <NameRestaurant>
-                <p>nome do restaurante</p>
+                <p>{restaurant.name}</p>
             </NameRestaurant>
             <InfoDelivery>
                 <p>

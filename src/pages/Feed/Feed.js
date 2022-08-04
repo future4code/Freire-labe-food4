@@ -25,7 +25,7 @@ export const Feed = () => {
         { headers: headers }
       )
       .then((response) => {
-        setGuardarRestaurantes(response.data);
+        setGuardarRestaurantes(response.data.restaurants);
       })
       .catch((error) => {
         console.log(error.data);
@@ -41,13 +41,11 @@ export const Feed = () => {
     context.setCurrentScreen("feed");
   }, []);
 
-  const mapearRestaurantes = guardarRestaurantes.map((post) => {
+  const mapearRestaurantes = guardarRestaurantes?.map((restaurant) => {
     return (
-      <div>
-        {post.name}
-        {post.deliveryTime}
-        {post.shipping}
-      </div>
+       <CardRestaurant key={restaurant.id}>
+        restaurant={restaurant}
+      </CardRestaurant>
     );
   });
 
