@@ -14,17 +14,17 @@ export const Feed = () => {
 
   const [searchRestaurant, setSearchRestaurant] = useState("");
 
-  const headers = {
-    auth: localStorage.getItem("token"),
-  };
-
   const pegarRestaurantes = () => {
+    const headers = {
+      auth: localStorage.getItem("token"),
+    };
     axios
       .get(
         "https://us-central1-missao-newton.cloudfunctions.net/rappi4B/restaurants",
         { headers: headers }
       )
       .then((response) => {
+        console.log(response)
         setGuardarRestaurantes(response.data.restaurants);
       })
       .catch((error) => {
@@ -40,6 +40,8 @@ export const Feed = () => {
     pegarRestaurantes();
     context.setCurrentScreen("feed");
   }, []);
+
+  console.log(guardarRestaurantes)
 
   const mapearRestaurantes = guardarRestaurantes?.map((restaurant) => {
     return (
