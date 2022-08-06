@@ -3,16 +3,22 @@ import { useContext, useEffect, useState } from "react";
 import { Context } from "../../Context";
 import { CardRestaurant } from "../../components/CardRestaurant/CardRestaurant";
 import { ScreenContainer } from "./style";
+import { Search } from "../../components/Search/Search";
+import { InputFeed } from "./style";
+import useProtectedPage from "../../hooks/useProtectedPage";
+import { NavBar } from "../../components/NavBar/NavBar";
 
 export const Feed = () => {
   
   const context = useContext(Context);
 
-  /* useProtectedPage() */
+  useProtectedPage()
 
   const [guardarRestaurantes, setGuardarRestaurantes] = useState([]);
 
   const [searchRestaurant, setSearchRestaurant] = useState("");
+
+  const [tipos, setTipos] = useState("")
 
   const pegarRestaurantes = () => {
     const headers = {
@@ -43,24 +49,36 @@ export const Feed = () => {
 
   console.log(guardarRestaurantes)
 
-  const mapearRestaurantes = guardarRestaurantes?.map((restaurant) => {
+  const filtrarRestaurantes = guardarRestaurantes?.filter((restaurant) => {
+    if(searchRestaurant === "") {
+      return restaurant
+    } else if (restaurant.name.toLowerCase().includes(searchRestaurant.toLowerCase())) {
+      return restaurant
+    }
+    return false
+  })
+  .filter((restaurant) => {
+    if(tipos === "" || restaurant.category === tipos) {
+      return restaurant
+    }
+  })
+  .map((restaurant) => {
     return (
-       <CardRestaurant key={restaurant.id}>
-        restaurant={restaurant}
-      </CardRestaurant>
+       <CardRestaurant key={restaurant.id} restaurant={restaurant} />
     );
   });
 
   return (
     <ScreenContainer>
-      <input
+      <InputFeed
         value={searchRestaurant}
         onChange={(event) => handleInputRestaurant(event)}
-        placeholder="Buscar Restaurantes"
+        placeholder="      Buscar Restaurantes"
       />
-      <strong>aqui categorias</strong>
-      <p>cards restaurantes</p>
-      {mapearRestaurantes}
+      <Search setTipos={setTipos}/>
+      {filtrarRestaurantes}
+      <NavBar/>
     </ScreenContainer>
+    
   );
 };

@@ -5,20 +5,20 @@ export const CardRestaurant = ({restaurant}) => {
     return (
         <CardContainer>
             <ImgContainer>
-                <img src="https://picsum.photos/328/120"
+                <img src={`${restaurant.logoUrl}`}
                     alt="Foto do restaurante"
                 //mudar o src para a foto do restaurante e o alt para o nome do restaurante
                 />
             </ImgContainer>
             <NameRestaurant>
-                <p>{restaurant?.name}</p>
+                <p>{restaurant.name}</p>
             </NameRestaurant>
             <InfoDelivery>
                 <p>
-                    tmin - tmax minutos
+                    {restaurant.deliveryTime}
                 </p>
                 <p>
-                    Frete R$: (preço do frete,00)
+                    {restaurant.shipping}
                 </p>
             </InfoDelivery>
         </CardContainer>

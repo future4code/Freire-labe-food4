@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const InputFeed = styled.input`
+ margin-bottom: 10px;
+`
+
 export const ScreenContainer = styled.div`
     display: flex;
     flex-direction: column;
