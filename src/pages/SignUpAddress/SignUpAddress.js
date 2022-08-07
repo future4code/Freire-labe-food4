@@ -29,7 +29,7 @@ export const SignUpAddress = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(form);
-    // login(form, clear, navigate);
+    
   };
 
   useEffect(() => {

@@ -5,7 +5,7 @@ import { goToFeed } from "../router/Coordinator";
 
 export const login = (body, clear, navigate) => {
   axios
-    .post(`${BASE_URL}rappi4B/login`, body)
+    .post(`${BASE_URL}/login`, body)
     .then((res) => {
         alert("Login feito com sucesso!");
         console.log(res);
@@ -21,7 +21,7 @@ export const login = (body, clear, navigate) => {
 
 export const signUp = (body, clear, navigate) => {
     axios
-      .post(`${BASE_URL}rappi4B/signup`, body)
+      .post(`${BASE_URL}/signup`, body)
       .then((res) => {
         alert("Cadastro feito com sucesso!");
         console.log(res);
@@ -34,3 +34,5 @@ export const signUp = (body, clear, navigate) => {
         console.log(err);
       });
   };
+
+ 
